@@ -1,9 +1,7 @@
-import withRedux from "next-redux-wrapper";
 import react from "react";
 import styles from "./search.module.css";
-import { connect } from "react-redux";
 
-class Search extends react.Component {
+export default class Search extends react.Component {
   state = {
     value: "",
     arr: [],
@@ -18,18 +16,14 @@ class Search extends react.Component {
     this.props.userValue(this.state.value);
   };
 
-  // handleSave = (event) => {
-  //   event.preventDefault();
-  //   let counter = 0;
-  //   this.state.arr.forEach((item) =>
-  //     item === this.state.value ? counter++ : ""
-  //   );
-  //   counter === 0 ? this.state.arr.push(this.state.value) : "";
-  //   this.props.queriesInput("" + this.state.arr);
-  // };
-
-  saveARRR = () => {
-    this.props.dispatch({ type: "TAKE_QUERY" });
+  handleSave = (event) => {
+    event.preventDefault();
+    let counter = 0;
+    this.state.arr.forEach((item) =>
+      item === this.state.value ? counter++ : ""
+    );
+    counter === 0 ? this.state.arr.push(this.state.value) : "";
+    this.props.queriesInput("" + this.state.arr);
   };
 
   render() {
@@ -45,19 +39,12 @@ class Search extends react.Component {
           <input type="submit" className={styles.form__submit_button} />
           <button
             className={styles.form__submit_button}
-            // onClick={this.handleSave}
-            onClick={this.saveARRR}
+            onClick={this.handleSave}
           >
             SAVE
           </button>
-          text: {this.props.val}
         </form>
       </div>
     );
   }
 }
-
-const mapStateToProps = (state) => ({ val: state.queryDispatch.val });
-
-//connect function INJECTS dispatch function as a prop!!
-export default connect(mapStateToProps)(Search);
