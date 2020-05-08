@@ -7,6 +7,8 @@ A search app where user could find any photo he wants, and find a lot of photos 
 ### Prerequisites
 
 ```
+- init github
+- clone repository
 - install node modules
 - Launch app
 ```
@@ -35,7 +37,7 @@ npm run dev
 
 ## Built With
 
-- [Next js](https://github.com/zeit/next.js/) - The web framework used
+- [React js](https://github.com/reactjs) - The web framework used
 
 ## Versioning
 

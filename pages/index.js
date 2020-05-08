@@ -54,11 +54,15 @@ export default class IndexPage extends react.Component {
         <Search userValue={this.onSearchSubmit} queriesInput={this.queries} />
 
         {this.state.loading && this.state.startGettingData &&
-          <p className={styles.loading}>Se încarcă...</p>}
+
+          <p className={styles.loading}>Se încarcă...</p>
+        }
 
         {!this.state.startGettingData &&
+
           <div className={styles.galery__block}>
             {!this.state.photosData &&
+
               <p className={styles.message__notFound}>Nu ați căutat încă nimic</p>
             }
 
