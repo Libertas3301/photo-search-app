@@ -13,13 +13,21 @@ A search app where user could find any photo he wants, and find a lot of photos 
 
 ### Installing
 
-At first we will install node modules
+At first we should init github and clone my rep
+
+```
+git init
+git clone https://github.com/Libertas3301/photo-search-app.git
+
+```
+
+After that we install node modules
 
 ```
 npm i
 ```
 
-And after that
+And at final launch app which will be hosted on PORT - 3000
 
 ```
 npm run dev
